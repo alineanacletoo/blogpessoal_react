@@ -1,12 +1,12 @@
-import { Children, createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
 
-interface AuthContextProps{
-    usuario: UsuarioLogin
-    hanleLogout(): void
-    handleLogin(usuario: UsuarioLogin): Promise<void>
-    isLoading: boolean
+interface AuthContextProps {
+	usuario: UsuarioLogin
+	handleLogout(): void
+	handleLogin(usuario: UsuarioLogin): Promise<void>
+	isLoading: boolean
 }
 
 interface AuthProviderProps{
@@ -55,10 +55,9 @@ export function AuthProvider({children}: AuthProviderProps){
 
         })
     }
-
-    return {
-        <AuthContext.Provider value={{usuario, handleLogin, handleLogout, isLoading}}>
-            {Children}
+    return (
+        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
+            {children}
         </AuthContext.Provider>
-    }
+    )
 }

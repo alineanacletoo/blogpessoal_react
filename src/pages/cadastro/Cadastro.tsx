@@ -53,11 +53,11 @@ function Cadastro() {
         alert('Erro ao cadastrar o usuario!')
       }
       
-    }else{
-      alert('Os dados do usuario estão incosistentes! verifique as informações e tente novamente')
-      setUsuario({...usuario, senha: ''})
-      setConfirmarSenha('')
-    }
+    }else {
+			alert("Dados do usuário inconsistentes! Verifique as informações e tente novamente.")
+			setUsuario({ ...usuario, senha: "" })
+			setConfirmarSenha("")
+		}
 
     setIsLoading(false)
   }
