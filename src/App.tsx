@@ -17,12 +17,14 @@ import FormTema from "./components/temas/formtemas/FormTema"
 import FormPostagem from "./components/postagem/formpostagem/FormPostagem"
 import DeletarPostagem from "./components/postagem/deletarpostagem/DeletarPostagem"
 import ListaPostagem from "./components/postagem/listapostagem/ListaPostagem"
+import { ToastContainer } from "react-toastify"
 
 
 function App() {
   return (
     <>
     <AuthProvider>
+    <ToastContainer />
       <BrowserRouter>
         <Navbar />
         <div className="min-h-[80vh]">
